@@ -1,3 +1,4 @@
+  <!-- Footerfil -->
   <footer>
     <div class="footer-contact"><h3>Kontakt</h3></div>
     <div class="footer-social-media">
@@ -7,11 +8,14 @@
     </div>
     <div class="">
       <i class="fab fa-unsplash"></i><i class="fab fa-font-awesome"></i></div>
-    <button id="up-btn" onClick=upp()><i class="fas fa-caret-up up-icon"></i> Upp</button>
+    <button class="btn" id="up-btn" onClick=upp()><span id="up-icon"><i class="fas fa-caret-up "></i></span></button>
   </footer>
 </div>
+<!-- Import av googles jquerybibliotek -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Import av egna javascript -->
 <script src="javaScript/javascript.js"></script>
-<script src="javaScript/script2.js"></script>
+<!-- import av nödvändiga Bootstrap javascript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
