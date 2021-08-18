@@ -22,10 +22,10 @@
     </header>
     <nav class="main-navigation">
       <ul class="menu-list">
-        <li class="menu-item"><span class="menu-icon"><i class="fas fa-user-ninja"></i></span><span class="menu-text"> Om mig</span></li>
-        <li class="menu-item"><span class="menu-icon"><i class="fas fa-briefcase"></i></span><span class="menu-text">Portfolio</span></li>
-        <li class="menu-item"><span class="menu-icon"><i class="fas fa-align-left"></i></span><span class="menu-text"> Cv</span></li>
-        <li class="menu-item"><span class="menu-icon"><i class="fas fa-address-card"></i></span><span class="menu-text">Kontakt</span></li>        
+        <li class="menu-item"><a href="#about"><span class="menu-icon"><i class="fas fa-user-ninja"></i></span><span class="menu-text"> Om mig</span></a></li>
+        <li class="menu-item"><a href="#about"><span class="menu-icon"><i class="fas fa-briefcase"></i></span><span class="menu-text">Portfolio</span></a></li>
+        <li class="menu-item"><a href="#about"><span class="menu-icon"><i class="fas fa-align-left"></i></span><span class="menu-text"> Cv</span></a></li>
+        <li class="menu-item"><a href="#about"><span class="menu-icon"><i class="fas fa-address-card"></i></span><span class="menu-text">Kontakt</span></a></li>        
       </ul>
     </nav>
   </div>

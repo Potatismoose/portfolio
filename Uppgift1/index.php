@@ -2,7 +2,7 @@
 <?php 
 include "header.php";
 ?>
-  <section class="top-section">
+  <section id="about" class="top-section">
     <div class="developer-text"><h2 class="net-webb"><span class="bigger">.NET utvecklare</span> med inriktning webb</h2></div>
   
   </section>

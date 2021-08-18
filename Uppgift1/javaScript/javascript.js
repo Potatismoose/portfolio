@@ -1,15 +1,16 @@
 // Jqueryscript för att fada in/ut hamburger eller X knappen
+// Samt ge top-section lite marginaler
 $(".hamburger").click(function(){
-    $(".main-navigation").fadeToggle(1000);
+    $(".main-navigation").fadeToggle(300);
     $(".x-btn").css("display", "inline-block");
     $(".top-section").css("margin", "3em auto 3em");
     $(".hamburger").toggle();
 });
 
-$(".x-btn").click(function(){
-    $(".main-navigation").fadeToggle(1000);
+$(".x-btn, .menu-item").click(function(){
+    $(".main-navigation").fadeToggle(300);
     $(".x-btn").css("display", "none");
-    $(".top-section").css("margin", "0 auto")
+    $(".top-section").css("margin", "1em auto 1em")
     $(".hamburger").toggle();
 });
 

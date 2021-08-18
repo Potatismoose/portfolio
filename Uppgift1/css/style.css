@@ -75,8 +75,8 @@ body {
 .top-section{
   
   min-width: 100%;
-  margin: 0em auto;
-  transition: margin ease-in-out 1s;
+  margin: 1em auto 1em;
+  transition: margin ease-in-out 0.3s;
 }
 .developer-text {
   font-size: 1.0rem;
@@ -87,11 +87,10 @@ body {
 }
 
 .main-navigation {
-  display: none;
+  display:none;
   background: var(--clr-text-standard);
   margin: 0;
   padding: 0;
-
 }
 
 .menu-list {
@@ -104,12 +103,9 @@ body {
   display: block;
   list-style-type: none;
   margin: 0 auto;
-  width: 200px;
-  padding: 0.3em 2em 0.3em;
-  border-radius: 0.5em;
   background: none;
-  border-bottom: 2px solid var(--clr-border-standard);
-  transition: color 0.5s;
+  width: 200px;
+  
 }
 
 .menu-item:last-child
@@ -133,7 +129,6 @@ body {
 .menu-item:hover {
 
   border-color: var(--clr-yellow);
-  cursor: pointer;
   transition: ease-in-out 0.35s;
 }
 
@@ -242,10 +237,22 @@ footer {
   transition: color ease-in-out 0.2s;
 }
 
-/***********
-*   Fonts  *
-***********/
+/****************************
+*   Fonts, länkar och text  *
+*****************************/
 
+.menu-item a{
+  min-width: 180px;
+  border-radius: 0.5em;
+  border-bottom: 2px solid var(--clr-border-standard);
+  transition: color 0.5s;
+  display: inline-block;
+  margin: 0 auto;
+  align-self: center;
+  padding: 0.3em 2em 0.3em;
+  text-decoration: none;
+  cursor: pointer;
+}
 .menu-text {
   color: var(--clr-text-light);
 }
