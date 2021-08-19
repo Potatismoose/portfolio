@@ -7,7 +7,8 @@
       </p>
     </div>
     <div class="">
-      <i class="fab fa-unsplash"></i><i class="fab fa-font-awesome"></i></div>
+      <i class="fab fa-unsplash"></i><i class="fab fa-font-awesome"></i>
+    </div>
     <button class="btn" id="up-btn" onClick=upp()><span id="up-icon"><i class="fas fa-caret-up "></i></span></button>
   </footer>
 </div>
