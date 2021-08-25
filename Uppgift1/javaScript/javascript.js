@@ -19,8 +19,8 @@ function ToggleClass(){
 //
 $(window).resize(function() {
     ToggleClass()
-  });
-//Laddar karusellen samt hämtar min ålder 
+  })
+  //Laddar karusellen samt hämtar min ålder 
 //och skriver ut den när dokumentet laddats
 $(document).ready(function()
 {
@@ -28,7 +28,7 @@ $(document).ready(function()
     $('.carousel').carousel()
     let age = getAge()
     document.getElementById("age").innerText = age.toString()
-});
+})
 
 $("#showquestion").click(function(){
     $("#emailvalidation").toggle()
@@ -63,12 +63,12 @@ $(".hamburger").click(function(){
     
     $("#x-btn").removeClass("notthere")
     $(".hamburger").attr("id","notthere")
-});
+})
 
 $("#x-btn, .menu-item").click(function(){
     if($(".menu-item").css("display") == "inline")
     {
-        return;
+        return
     }
     
     if(!$('#x-btn').hasClass(" notthere "))
@@ -79,7 +79,7 @@ $("#x-btn, .menu-item").click(function(){
         $("#x-btn").addClass("notthere")
         $(".hamburger").removeAttr("id")
     } 
-});
+})
 
 
 $("#showquestion").click(function(){
@@ -112,10 +112,10 @@ function upp() {
 //Räknar ut min ålder och returnerar den
 function getAge(birthday) {
     let myBirthday = "1982-07-03T00:00:00"
-    var todaysDate = new Date()
-    var birthDate = new Date(myBirthday)
-    var age = todaysDate.getFullYear() - birthDate.getFullYear()
-    var milliseconds = todaysDate.getMonth() - birthDate.getMonth()
+    let todaysDate = new Date()
+    let birthDate = new Date(myBirthday)
+    let age = todaysDate.getFullYear() - birthDate.getFullYear()
+    let milliseconds = todaysDate.getMonth() - birthDate.getMonth()
     if (milliseconds < 0 || (milliseconds === 0 && todaysDate.getDate() < birthDate.getDate())) {
         age--
     }
@@ -144,28 +144,28 @@ function weatherBalloon( cityID ) {
     switch(weatherDescription){
         case "Soligt":
             weatherDescription = weatherDescription + " <i class='fas fa-sun'></i>"
-            break;
+            break
         case "Mulet": 
             weatherDescription = weatherDescription + " <i class='fas fa-cloud'></i> "
-            break;
+            break
         case "Växlande molnighet": 
             weatherDescription = weatherDescription + " <i class='fas fa-cloud-sun'></i>"
-            break;
+            break
         case "Lättare regn":
             weatherDescription = weatherDescription + " <i class='fas fa-cloud-sun-rain'></i>"
-            break;
+            break
         case "Regn":
             weatherDescription = weatherDescription + " <i class='fas fa-cloud-rain'></i>"
-            break;
+            break
         case "Åska":
             weatherDescription = weatherDescription + " <i class='fas fa-poo-storm'></i>"
-            break;
+            break
         case "Snö":
             weatherDescription = weatherDescription + " <i class='fas fa-snowflake'></i>"
-            break;
+            break
         case "Dimma":
             weatherDescription = weatherDescription + " <i class='fas fa-smog'></i>"
-            break;
+            break
     }
 	document.getElementById('description').innerHTML = weatherDescription
 	document.getElementById('temp').innerHTML = celcius + '&deg;'
