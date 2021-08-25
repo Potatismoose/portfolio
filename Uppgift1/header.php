@@ -13,7 +13,7 @@
 <div class="container">
   <div class="header-nav-flex">
     <header>
-      <h1 class="header-text">B.Christensen</h1>
+      <h1 class="header-text left">B.Christensen</h1>
       <nav class="hamburgernav">
       
         <i class="fas fa-bars hamburger"></i>

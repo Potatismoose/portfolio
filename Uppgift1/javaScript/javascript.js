@@ -92,13 +92,25 @@ $("#showquestion").click(function(){
 window.onscroll = function() {scrollFunction()}
 
 function scrollFunction() {
+    let header = document.getElementById("right")
+    let position = right.getBoundingClientRect()
+
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         //Om det är scrollat så sätts upBtn:s display egenskap till block
         document.getElementById("up-btn").style.display = "block"
+        
+        if(position.y < 10)
+        {
+            right.style.opacity = "1";
+        }
     } 
     else {
         //Om det är INTE är scrollat så sätts upBtn:s display egenskap till none och är därmed osynlig.
         document.getElementById("up-btn").style.display = "none"
+        if(position.y >= 10)
+        {
+            right.style.opacity = "0";
+        }
     }
 }
 // När användaren klickar på knappen så scrollas sidan upp. Denna funktion är knuten till knappen med en onclick event
@@ -123,15 +135,15 @@ function getAge(birthday) {
 }
 
 //OpenWeatherMap API
+var key = 'b2a8088720f4f4f3845169d75fbf464f'
+
 function weatherBalloon( cityID ) {
-    let key = 'b2a8088720f4f4f3845169d75fbf464f'
     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
     .then(function(resp) { return resp.json() }) // Convert data to json
     .then(function(data) {
       drawWeather(data)
     })
     .catch(function() {
-      // catch any errors
     })
   }
 
