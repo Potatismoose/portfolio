@@ -14,10 +14,10 @@
   <div class="header-nav-flex">
     <header>
       <h1 class="header-text">B.Christensen</h1>
-      <nav>
+      <nav class="hamburgernav">
       
         <i class="fas fa-bars hamburger"></i>
-        <span class="x-btn"><i class="far fa-times-circle"></i></span>
+        <span id="x-btn" class="notthere"><i class="far fa-times-circle"></i></span>
       </nav>
     </header>
     

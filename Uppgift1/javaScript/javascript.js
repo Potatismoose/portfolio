@@ -4,10 +4,27 @@ window.onload = function()
     weatherBalloon( 2718991 )
 }
 
+function ToggleClass(){
+    if ($(window).width() < 768){
+        
+            $(".main-navigation").addClass("visibility-hidden")
+            $(".hamburgernav").removeClass("visibility-hidden")
+        
+    }
+    else {
+        $(".main-navigation").removeClass("visibility-hidden")
+        $(".hamburgernav").addClass("visibility-hidden")
+    }
+}
+//
+$(window).resize(function() {
+    ToggleClass()
+  });
 //Laddar karusellen samt hämtar min ålder 
 //och skriver ut den när dokumentet laddats
 $(document).ready(function()
 {
+    ToggleClass()
     $('.carousel').carousel()
     let age = getAge()
     document.getElementById("age").innerText = age.toString()
@@ -37,22 +54,31 @@ $(".submitanswer").click(function(){
     }  
 })
 
-// Jqueryscript för att fada in/ut hamburger eller X knappen
+// Jqueryscript för att sätta hamburger eller X knappen synlighet
 // Samt ge top-section lite marginaler
 $(".hamburger").click(function(){
-    $(".main-navigation").css("visibility", "visible")
+    $(".main-navigation").removeClass("visibility-hidden")
     $(".top-section").css("margin", "15em auto 0")
     $(".top-section").css("padding", "5em 0")
-    $(".x-btn").toggle()
-    $(".hamburger").toggle()
+    
+    $("#x-btn").removeClass("notthere")
+    $(".hamburger").attr("id","notthere")
 });
 
-$(".x-btn, .menu-item").click(function(){
-    $(".main-navigation").css("visibility", "hidden")
-    $(".top-section").css("margin", "2em auto")
-    $(".top-section").css("padding", "4em 0")
-    $(".x-btn").toggle()
-    $(".hamburger").toggle()
+$("#x-btn, .menu-item").click(function(){
+    if($(".menu-item").css("display") == "inline")
+    {
+        return;
+    }
+    
+    if(!$('#x-btn').hasClass(" notthere "))
+    {
+        $(".main-navigation").addClass("visibility-hidden")
+        $(".top-section").css("margin", "2em auto")
+        $(".top-section").css("padding", "4em 0")
+        $("#x-btn").addClass("notthere")
+        $(".hamburger").removeAttr("id")
+    } 
 });
 
 
@@ -165,8 +191,7 @@ function replaceWeatherText(weather){
     for (const [key, value] of weatherText) 
     {
        if(weather.main == `${key}`)
-       {
-           
+       { 
            if(weather.id >= 801 && weather.id <= 803)
             {
                 return "Växlande molnighet"

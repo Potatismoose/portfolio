@@ -17,10 +17,22 @@ include "header.php";
   </section>
 
   <section class="about-me content-box">
-  <div>
-      <img id="halfme" src="img/me.png">
+  <div class="stretch">
+
+  <picture>
+  
+    <source 
+    srcset="img/mebig.png"
+    media="(min-width: 768px)"
+    />
+    <img id="halfme"
+      src="img/me.png" 
+      alt="Bild på mig"
+    />
+  </picture>
+  
     </div>
-    <div class="textbox">  
+    <div class="textbox" id="textAboutMe">  
       <h2>Vem är jag?</h2>
       
       <p>En stolt tvåbarnsfar på <span id="age"></span> år från Östersund, 
@@ -29,6 +41,7 @@ include "header.php";
       i Mölndal efter 11 år på Elgiganten i Östersund som säljare, avdelningsledare, supporttekniker och nätverksansvarig. </p>  
       <a href="#portfolio"><button class="myBtn"><i class="fas fa-caret-down down"></i></button></a>
       <span id="portfolio"></span>
+      
     </div>  
   </section>
   
@@ -38,15 +51,24 @@ include "header.php";
       <div class="carousel slide" id="portfolio-carousel" data-ride="false" data-interval="5000" data-pause="hover">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <h5>Knowhow tools</h5>
-            <img
-              class="portfolioImg"
-              src="img/knowhow.png"
-              alt="En bild på mitt program knowhow tools"
-            />
-            <p class="padded-text">
-              Ett program jag skapade med hjälp av batchscript under tiden jag jobbade på Elgiganten. Programmet underlättade genom automatisering vid felsökning och installationer av kunders datorer och sparade ca 5-6 timmar i veckan/person.
-            </p>
+            <div class="cs-Grid">
+              <div class="carousel-heading">
+                <h5>Knowhow tools</h5>
+              </div>
+              <div class="carousel-image">
+              <img
+                class="portfolioImg"
+                src="img/knowhow.png"
+                alt="En bild på mitt program knowhow tools"
+              />
+              </div>
+              <div class="carousel-text">
+              <p class="padded-text">
+                Ett program jag skapade med hjälp av batchscript under tiden jag jobbade på Elgiganten. Programmet underlättade genom automatisering vid felsökning och installationer av kunders datorer och sparade ca 5-6 timmar i veckan/person.
+              </p>
+              </div>
+            </div>
+            
           </div>
           <div class="carousel-item">
             <h5>Dragon quest - Text RPG</h5>
