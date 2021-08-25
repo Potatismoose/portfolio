@@ -3,106 +3,132 @@
 include "header.php";
 ?>
 <div class="main">
-<nav class="main-navigation">
-      <ul class="menu-list">
-        <li class="menu-item"><a href="#about"><span class="menu-icon"><i class="fas fa-user-ninja"></i></span><span class="menu-text"> Om mig</span></a></li>
-        <li class="menu-item"><a href="#portfolio"><span class="menu-icon"><i class="fas fa-briefcase"></i></span><span class="menu-text">Portfolio</span></a></li>
-        <li class="menu-item"><a href="#cv"><span class="menu-icon"><i class="fas fa-align-left"></i></span><span class="menu-text"> Cv / skills</span></a></li>
-        <li class="menu-item"><a href="#contact"><span class="menu-icon"><i class="fas fa-address-card"></i></span><span class="menu-text">Kontakt</span></a></li>        
-      </ul>
-    </nav>
+  <?php
+  include "mainmenu.php" 
+  ?>
   <section class="top-section">
     
     <div class="developer-text"><h2 class="net-webb"><span class="bigger">.NET utvecklare</span> med inriktning webb</h2></div>
     <span id="about"></span>
-    <div class="circle c1">HTML</div>  
-    <div class="circle c2">CSS</div>
-    <div class="circle c3">C#</div>
-    <div class="circle c4">javaScript</div>
+    <a href="#cv"><div class="circle c1">HTML</div></a>
+    <a href="#cv"><div class="circle c2">CSS</div></a>
+    <a href="#cv"><div class="circle c3">C#</div></a>
+    <a href="#cv"><div class="circle c4">javaScript</div></a>
   </section>
 
   <section class="about-me content-box">
   <div>
       <img id="halfme" src="img/me.png">
     </div>
-    <div class="textbox">
-      
+    <div class="textbox">  
       <h2>Vem är jag?</h2>
       
-      <p>En stolt tvåbarnsfar på <span id="age"></span> år, 
-      som alltid älskat programmering. 
+      <p>En stolt tvåbarnsfar på <span id="age"></span> år från Östersund, 
+      som alltid älskat programmering då jag får vara kreativ och ta mig an utmaningar. 
       Jag valde att utbilda mig som .NET utvecklare på yrkeshögskolan 
-      i Mölndal efter 11 år på Elgiganten i Östersund som säljare, avdelningsledare, supporttekniker och nätverksansvarig.  </p>  
-      <i class="fas fa-caret-down myBtn down"></i>
-      
+      i Mölndal efter 11 år på Elgiganten i Östersund som säljare, avdelningsledare, supporttekniker och nätverksansvarig. </p>  
+      <a href="#portfolio"><button class="myBtn"><i class="fas fa-caret-down down"></i></button></a>
       <span id="portfolio"></span>
-    </div>
-    
+    </div>  
   </section>
   
-
- 
-    
-  <section class="portfolio content-box" id="testimonials">
+  <section class="portfolio content-box">
     <h2>Portfolio</h2>
+    <div class="carousel-container">
       <div class="carousel slide" id="portfolio-carousel" data-ride="false" data-interval="5000" data-pause="hover">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <p>
-              I no longer have to sniff other dogs for love. I'v        e found the
-              hottest Corgi on TinDog. Woof.
-            </p>
+            <h5>Knowhow tools</h5>
             <img
-              class="testimonialImg"
-              src="images/dog-img.jpg"
-              alt="dog-profile"
+              class="portfolioImg"
+              src="img/knowhow.png"
+              alt="En bild på mitt program knowhow tools"
             />
-            <em>Pebbles, New York</em>
+            <p class="padded-text">
+              Ett program jag skapade med hjälp av batchscript under tiden jag jobbade på Elgiganten. Programmet underlättade genom automatisering vid felsökning och installationer av kunders datorer och sparade ca 5-6 timmar i veckan/person.
+            </p>
           </div>
           <div class="carousel-item">
-            <p>
-              My dog used to be so lonely, but with TinDog's help, they've found
-              the love of their life. I think.
-            </p>
+            <h5>Dragon quest - Text RPG</h5>
             <img
-              class="testimonialImg"
-              src="images/lady-img.jpg"
-              alt="lady-profile"
+              class="portfolioImg"
+              src="img/dragonquest.png"
+              alt="En bild på mitt spel dragon quest"
             />
-            <em>Beverly, Illinois</em>
+            <p class="nonpadded-text">
+              En inlämningsuppgift som vi hade i C#. 
+              Vi skulle göra ett spel med vissa kriterier. 
+              Jag valde att göra ett RPG spel med shop, inventory och olika vapen samt fiender. Ett mycket roligt projekt.
+              #interfaces, #arv, #Polymorfism
+            </p>
           </div>
         </div>
-        <a
-          href="#portfolio-carousel"
-          class="carousel-control-prev"
-          role="button"
-          data-slide="prev"
-          ><i class="fas fa-chevron-left blackText"></i></a>
-        <a
-          href="#portfolio-carousel"
-          class="carousel-control-next"
-          role="button"
-          data-slide="next"
-          >
-          <i class="fas fa-chevron-right blackText"></i>
-        </a>
+        
       </div>
-      <span id="cv"></span>
-    </section>
+    </div>
+    
+    <span id="cv"></span>
+  </section>
   
 
   <section class="cvskills content-box">
-  <h2>Cv / Kompetenser</h2>
-  <div id="img-me">
-  <button type="button" class="btn btn-primary">Primary</button><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis assumenda nam aliquid architecto ut, quo consequuntur distinctio quaerat! Laborum, modi quae! Aperiam veniam aspernatur labore reprehenderit ullam, inventore praesentium ad.</p></div>
+    <div id="cvdiv1">
+      <h2>Cv / Kompetenser</h2>
+    </div>
+
+    <div id="kompetenser">
+ 
+      <ul>
+        <li class="icon chevron-right popupinfo"> HTML </li>
+        <li class="icon chevron-right popupinfo"> CSS </li>
+        <li class="icon chevron-right popupinfo"> C# </li>
+        <li class="icon chevron-right popupinfo"> JavaScript </li>
+        <li class="icon chevron-right popupinfo"> JQuery </li>
+        <li class="icon chevron-right popupinfo"> React </li>
+        <li class="icon chevron-right popupinfo"> Bootstrap </li>
+        <li class="icon chevron-right popupinfo"> PHP </li>
+        <li class="icon chevron-right popupinfo"> SQL </li>
+        <li class="icon chevron-right popupinfo"> Batchscript </li>
+        <li class="icon chevron-right popupinfo"> SCRUM </li>
+
+        
+      </ul>
+    </div>
+
+    <div class="textbox"><p>Jag har under många år arbetat med kundservice och försäljning och programmeringen har varit mer ett hobbyintresse som jag nu valt att utveckla proffesionellt. Läs mer om mina arbeten och ladda ner mitt CV här nedanför.</p>
+    <button class="myBtn" id="downloadcv"><i class="fas fa-file-download"></i> Ladda ner CV</button>
+    </div>
+
+  </div>
   <span id="contact"></span>
-  <div id="text-me">om mig bla bla bla Lorem ipsum, dolor sit amet consectetur adipisicing ecum ut, officiis, perferendis unde quo. Iusto ut veniam explicabo quo labore iure tempore eligendi incidunt laboriosam. Reprehenderit pariatur impedit magni delectus mollitia! ?</div>
   </section>
 
   <section class="contact content-box">
-  <h2>Kontakt</h2>
-  <div id="img-me"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis assumenda nam aliquid architecto ut, quo consequuntur distinctio quaerat! Laborum, modi quae! Aperiam veniam aspernatur labore reprehenderit ullam, inventore praesentium ad.</p></div>
-  <div id="text-me">om mig bla bla bla Lorem ipsum, dolor sit amet consectetur adipisicing ecum ut, officiis, perferendis unde quo. Iusto ut veniam explicabo quo labore iure tempore eligendi incidunt laboriosam. Reprehenderit pariatur impedit magni delectus mollitia! ?</div>
+  
+  <div id="contactheader"><h2>Kontakt</h2></div>
+  <div id="emptyleft"></div>
+  <div id="contactmain">
+    Jag är alltid intresserad av nya kontakter, och utökar gärna mitt nätverk på LinkedIn. Tveka inte att höra av dig, oavsett om det är för en kaffe, nyfikenhet eller ett arbete.
+    <div id="contactWays">
+      <ul>
+        <li>
+          Epost: <button class="myBtn" id="showquestion">Visa e-post</button>
+          <form id="emailvalidation" onsubmit="return false">
+          <label for="answer">Vad blir 5+fem minus 2?</label>
+          <input type="number" id="answer">
+          <button class="myBtn submitanswer"><i class="fas fa-check"></i></button>
+          </form>
+          <div id="email"></div>
+        </li>
+        <li>Telefon:<a href="tel:0706450040"> 070-645 00 40</a></li>
+        <li><a href="https://www.linkedin.com/in/benny-christensen-27b69114b/" target="_blank"><i class="fab fa-linkedin socialIcon" id="myLinkedin"></i></a><a href="https://m.me/100024693787771" target="_blank"><i class="fab fa-facebook-messenger socialIcon"></i></a></li>
+      </ul>
+      
+    </div>
+    
+  
+  </div>
+  <div id="emptyright"></div>
   </section>
 </div>
 <?php 
