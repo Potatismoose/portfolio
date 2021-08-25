@@ -739,6 +739,62 @@ footer {
     background: var(--clr-text-standard);
     overflow:visible;
   }
+
+  .c2
+{
+  right:65%;
+  top: 70%;
+  box-shadow: 3px -2px 1px inset var(--clr-shading-rgba);
+  animation: bounce2 8s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes bounce2{
+  0% {
+    top: 70%;
+  }
+  25% {
+    right: 64%; 
+  }
+  50% {
+    top: 74%;
+    box-shadow: 0px -3px 4px inset var(--clr-shading-dark-rgba);
+  }
+  75% {
+    top: 76%;
+  }
+  100% {
+    top: 70%;
+    right: 65%;
+    box-shadow: 3px -2px 1px inset var(--clr-shading-rgba);
+  }
+}
+
+.c4
+{
+  bottom: 2%;
+  right: 35%;
+  box-shadow: -1px -3px 2px inset var(--clr-shading-rgba);
+  animation: strafe2 8s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes strafe2{
+  0% {
+    right: 35%;
+  }
+  25% {
+    bottom: 5%;
+  }
+  50% {
+    right: 37%;
+    box-shadow: 0px -3px 2px inset var(--clr-shading-dark-rgba);
+  }
+  100% {
+    right: 35%;
+    box-shadow: -1px -3px 2px inset var(--clr-shading-rgba);
+  }
+}
 }
 
 
