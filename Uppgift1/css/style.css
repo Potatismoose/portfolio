@@ -524,12 +524,11 @@ footer {
 /***********/
 
 #downloadcv i{
-  padding: 0 0.3em 0 0;
   font-size: 1.5em;
 }
 
 #downloadcv {
-  margin: 2em 0 1em;
+  padding: 0.8em 1em 0.4em;  
 }
 
 .hamburger {
@@ -685,7 +684,6 @@ Media query för större skärmar (tablet och desktop)
 {
   .stretch{
     align-self: stretch;
-    list
   }
 
   .carousel-container{

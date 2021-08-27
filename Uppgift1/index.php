@@ -130,7 +130,7 @@ include "header.php";
     </div>
 
     <div class="textbox" id="cvText"><p>Jag har under många år arbetat med kundservice och försäljning och programmeringen har varit mer ett hobbyintresse som jag nu valt att utveckla proffesionellt. Läs mer om mina arbeten och ladda ner mitt CV här nedanför.</p>
-    <button class="myBtn" id="downloadcv"><i class="fas fa-file-download"></i> Ladda ner CV</button>
+    <a href="dokument/cv.pdf" download class="myBtn" id="downloadcv"><i class="fas fa-file-download"></i> Ladda ner CV</a>
     </div>
 
   </div>
