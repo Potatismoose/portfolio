@@ -685,6 +685,7 @@ Media query för större skärmar (tablet och desktop)
 {
   .stretch{
     align-self: stretch;
+    list
   }
 
   .carousel-container{
