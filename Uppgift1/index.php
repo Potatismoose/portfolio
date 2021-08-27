@@ -55,9 +55,9 @@ include "header.php";
               <div class="carousel-heading">
                 <h5>Knowhow tools</h5>
               </div>
-              <div class="carousel-image">
+              <div class="carousel-image knowhow">
               <img
-                class="portfolioImg"
+                class="portfolioImg "
                 src="img/knowhow.png"
                 alt="En bild på mitt program knowhow tools"
               />
@@ -70,20 +70,32 @@ include "header.php";
             </div>
             
           </div>
+
           <div class="carousel-item">
-            <h5>Dragon quest - Text RPG</h5>
-            <img
-              class="portfolioImg"
-              src="img/dragonquest.png"
-              alt="En bild på mitt spel dragon quest"
-            />
-            <p class="nonpadded-text">
+            <div class="cs-Grid">
+              <div class="carousel-heading">
+                <h5>Dragon quest - Text RPG</h5>
+              </div>
+              <div class="carousel-image">
+                <img
+                class="portfolioImg"
+                src="img/dragonquest2.png"
+                alt="En bild på mitt spel dragon quest"
+                />
+              </div>
+              <div class="carousel-text">
+              <p class="padded-text">
               En inlämningsuppgift som vi hade i C#. 
               Vi skulle göra ett spel med vissa kriterier. 
               Jag valde att göra ett RPG spel med shop, inventory och olika vapen samt fiender. Ett mycket roligt projekt.
               #interfaces, #arv, #Polymorfism
-            </p>
+              </p>
+              </div>
+            </div>
+            
           </div>
+
+          
         </div>
         
       </div>
@@ -117,7 +129,7 @@ include "header.php";
       </ul>
     </div>
 
-    <div class="textbox"><p>Jag har under många år arbetat med kundservice och försäljning och programmeringen har varit mer ett hobbyintresse som jag nu valt att utveckla proffesionellt. Läs mer om mina arbeten och ladda ner mitt CV här nedanför.</p>
+    <div class="textbox" id="cvText"><p>Jag har under många år arbetat med kundservice och försäljning och programmeringen har varit mer ett hobbyintresse som jag nu valt att utveckla proffesionellt. Läs mer om mina arbeten och ladda ner mitt CV här nedanför.</p>
     <button class="myBtn" id="downloadcv"><i class="fas fa-file-download"></i> Ladda ner CV</button>
     </div>
 
@@ -128,10 +140,11 @@ include "header.php";
   <section class="contact content-box">
   
   <div id="contactheader"><h2>Kontakt</h2></div>
-  <div id="emptyleft"></div>
+  
   <div id="contactmain">
-    Jag är alltid intresserad av nya kontakter, och utökar gärna mitt nätverk på LinkedIn. Tveka inte att höra av dig, oavsett om det är för en kaffe, nyfikenhet eller ett arbete.
+    <div id="contacttext"><h5>Knyt kontakt</h5>Jag är alltid intresserad av nya kontakter, och utökar gärna mitt nätverk på LinkedIn. Tveka inte att höra av dig, oavsett om det är för en kaffe, nyfikenhet eller ett arbete.</div>
     <div id="contactWays">
+    <h5>Kontaktvägar</h5>
       <ul>
         <li>
           Epost: <button class="myBtn" id="showquestion">Visa e-post</button>
@@ -150,7 +163,7 @@ include "header.php";
     
   
   </div>
-  <div id="emptyright"></div>
+  
   </section>
 </div>
 <?php 

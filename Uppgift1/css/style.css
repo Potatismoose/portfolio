@@ -122,7 +122,6 @@ a:focus, a:hover{
   background-image: linear-gradient( rgba(0,0,0,0.01),  rgba(0,0,0,0.05));
   text-align: center;
   transition: all ease 0.3s;
-  
 }
 
 .circle:active, .circle:hover{
@@ -245,16 +244,18 @@ color: var(--clr-yellow);
   margin: 2em auto;
   width: 70%;
   text-align: center;
-  
 }
 
 .main-navigation {
   z-index: 2;
   position: absolute;
-  background: var(--clr-text-standard);
+  background-image: linear-gradient(to right, var(--clr-text-standard) 45%, black 100%);
+  background-size: 200%;
+  background-position: left;
   margin: 0;
   padding: 0;
   width: 100%;
+  transition: background-position ease-in-out 0.2s;
 }
 
 .visibility-hidden{
@@ -275,15 +276,11 @@ color: var(--clr-yellow);
   width: 200px;
 }
 
-
 .menu-item.active,
 .menu-item:hover .menu-icon i {
-
   color: var(--clr-yellow);
   transition: ease-in-out 0.35s;
 }
-
-
 
 .content-box{
   text-align: center;
@@ -384,9 +381,11 @@ color: var(--clr-yellow);
 .carousel-container{
   max-width: 80%;
 }
+
 .padded-text{
   padding: 0;
 }
+
 .carousel-item{
   min-height: 35rem;
   background: white;
@@ -409,13 +408,24 @@ header {
 .contact{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: auto 4fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
 
+#contacttext
+{
+  min-width: 20ch;
+  padding: 1em;
+}
+
 #contactheader { 
   grid-area: 1 / 1 / 2 / 4; 
+}
+
+#contactheader h2{
+  margin: 1em 0 0.5em 0;
+  padding: 0;
 }
 
 #emptyleft { 
@@ -427,8 +437,7 @@ header {
   align-self: stretch;
 }
 
-#contactWays{
-  
+#contactWays{ 
   text-align: center;
   padding: 1em;
 }
@@ -436,14 +445,20 @@ header {
 #contactWays ul{
   margin:0;
   padding:0;
+  
 }
+
 #contactWays li{
   margin-bottom: 1em;
   list-style-type: none;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
 }
 
 #emailvalidation{
   display: none;
+  font-size: 0.8rem;
 }
 
 #emptyright { 
@@ -455,25 +470,24 @@ footer {
   padding: 1em;
   background: var(--clr-text-standard);
   color: var(--clr-text-light);
-  overflow:hidden;
-  
+  overflow:hidden; 
 }
+
 .footer-contact{
   position: relative;
   z-index: 100;
 }
+
 .nr1{
   background-image: linear-gradient(45deg, var(--clr-dark-orange), var(--clr-teal));
   height: 120%;
   width: 85%;
-  
   bottom: 45%;
   left: -7rem;
   opacity: 0.35;
-  
 }
-.nr2{
-  
+
+.nr2{ 
   background-image: linear-gradient(45deg, var(--clr-yellow), var(--clr-teal));
   height: 100%;
   width: 120%;
@@ -481,15 +495,15 @@ footer {
   left: 3rem;
   opacity: 0.5;
 }
+
 .infront{
   position: relative;
-  
   text-align: center;
 }
+
 .footercirclebig{
   position: absolute;
-  border-radius: 50%;
-  
+  border-radius: 50%;  
 }
 
 #description i{
@@ -517,13 +531,13 @@ footer {
 #downloadcv {
   margin: 2em 0 1em;
 }
+
 .hamburger {
   font-size: 2rem;
   margin: 0 0 0.3em 0;
   padding: 0;
   color: var(--clr-text-standard);
-  transition: ease-in-out 0.2s;
-  
+  transition: ease-in-out 0.2s; 
 }
 
 .hamburger:hover,
@@ -531,8 +545,7 @@ footer {
   color: var(--clr-yellow);
 }
 
-#x-btn {
-  
+#x-btn { 
   font-size: 2rem;
   margin: 0 0 0.3em;
   color: var(--clr-text-standard);
@@ -577,7 +590,6 @@ footer {
   right: 3%;
   bottom: 1%;
   margin: 0;
-  
 }
 
 
@@ -601,14 +613,12 @@ footer {
 
 .menu-item a.active,
 .menu-item a:hover {
-
   border-color: var(--clr-yellow);
   transition: ease-in-out 0.35s;
 }
 .menu-text {
   color: var(--clr-text-light);
 }
-
 
 .header-text {
   font-family: var(--font-heading);
@@ -621,6 +631,7 @@ footer {
   color: var(--clr-text-standard);
   font-size: 2.2rem;
 }
+
 #right{
   font-size: 2rem;
   color: var(--clr-orange);
@@ -653,9 +664,9 @@ footer {
 }
 
 #windarrow{
-  display: inline-block;
-  
+  display: inline-block; 
 }
+
 .bigger {
   font-size: 1.6em;
   line-height: 1em;
@@ -663,6 +674,13 @@ footer {
   display: block;
 }
 
+.knowhow{
+  margin-bottom: 2px;
+}
+
+/* ***************************************************
+Media query för större skärmar (tablet och desktop)
+*************************************************** */
 @media only screen and (min-width: 768px)
 {
   .stretch{
@@ -689,6 +707,13 @@ footer {
   .carousel-image
   {
     grid-area: 2 / 2 / 3 / 3;
+    
+  }
+
+  .carousel-image img
+  {
+    width: 70%;
+    float: left;
   }
 
   .carousel-heading
@@ -698,6 +723,7 @@ footer {
 
   .carousel-text
   {
+    justify-self: flex-end;
     grid-area: 2 / 1 / 3 / 2;
     max-width: 50ch;
     text-align: right;
@@ -706,17 +732,16 @@ footer {
   .menu-icon{
     font-size: 1.2rem;
   }
+
   #textAboutMe{
     color: var(--clr-text-light);
     position: relative;
     left: -30%; 
     margin: 2em;
     max-width: 60ch;
-    min-width: 40h;
-    text-align: left;    
+    min-width: 40h;   
   }
 
-  
   .main-navigation{
     display:block;
     position:sticky;
@@ -824,18 +849,58 @@ footer {
   border-bottom: 2px solid var(--clr-orange);
 }
 
+.textbox{
+   text-align: left;
+ }
+
+.cvskills{
+    grid-template-columns: 1fr 2fr 4fr 1fr;
+    gap: 1em;
 }
 
+#cvdiv1 { 
+  grid-area: 1 / 1 / 2 / 5; 
+}
 
+#cvText{
+  grid-area: 2 / 3 / 3 / 4;
+  max-width: 60ch;
+}
 
+#kompetenser { 
+  display: flex;
+  justify-content:flex-end;
+  grid-area: 2 / 2 / 3 / 3; 
+}
 
+#kompetenser li{ 
+  margin-right: 1em;
+}
 
+.contact{
+  grid-template-columns: 3fr 2fr 4fr 1fr;
+  gap: 1em;
+  text-align: left;
+}
 
+#contactheader{
+grid-area: 1 / 1 / 2 / 5; 
+text-align: center;
+}
 
+#contactmain{
+  grid-area: 2 / 2 / 3 / 4; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+}
 
+#contactWays{
+  text-align: left;
+}
 
+#contactWays li{
+  text-align: left;
+}
 
-
-
-
-
+}

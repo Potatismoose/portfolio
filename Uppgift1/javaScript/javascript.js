@@ -4,23 +4,7 @@ window.onload = function()
     weatherBalloon( 2718991 )
 }
 
-function ToggleClass(){
-    if ($(window).width() < 768){
-        
-            $(".main-navigation").addClass("visibility-hidden")
-            $(".hamburgernav").removeClass("visibility-hidden")
-        
-    }
-    else {
-        $(".main-navigation").removeClass("visibility-hidden")
-        $(".hamburgernav").addClass("visibility-hidden")
-    }
-}
-//
-$(window).resize(function() {
-    ToggleClass()
-  })
-  //Laddar karusellen samt hämtar min ålder 
+//Laddar karusellen samt hämtar min ålder 
 //och skriver ut den när dokumentet laddats
 $(document).ready(function()
 {
@@ -30,10 +14,53 @@ $(document).ready(function()
     document.getElementById("age").innerText = age.toString()
 })
 
+//On resize
+$(window).resize(function() {
+    
+    CheckIfMenuIsOpenAndCloseIt()
+    ToggleClass()
+})
+
+//Togglar mellan hamburgare och vanlig meny
+function ToggleClass(){
+    if ($(window).width() < 768){
+        
+            $("#right").css("display", "none")
+            $(".main-navigation").addClass("visibility-hidden")
+            $(".main-navigation").addClass("mobile")
+            $(".hamburgernav").removeClass("visibility-hidden")
+    }
+    else {
+        $("#right").css({
+            "display" : "inline-block",
+            "opacity" : "0"
+        })
+        
+        $(".main-navigation").removeClass("visibility-hidden")
+        $(".main-navigation").removeClass("mobile")
+        $(".hamburgernav").addClass("visibility-hidden")
+    }
+}
+
+//Kollar om menyn är öppen och stänger den och återställer hamburgaren
+function CheckIfMenuIsOpenAndCloseIt()
+  {
+    if(!$('#x-btn').hasClass(" notthere "))
+    {
+        $(".main-navigation").addClass("visibility-hidden")
+        $(".top-section").css("margin", "2em auto")
+        $(".top-section").css("padding", "4em 0")
+        $("#x-btn").addClass("notthere")
+        $(".hamburger").removeAttr("id")
+    } 
+  }
+
+  //Visar kontrollfrågan när man klickat på visa epost knappen
 $("#showquestion").click(function(){
     $("#emailvalidation").toggle()
     $("#email").html("")
-    $("#email").toggle()     
+    $("#email").toggle()  
+    $("#showquestion").html("Visa e-post")   
 })
 
 //script för att kalkylera uträkning för att avgöra om e-post ska visas eller inte.
@@ -65,6 +92,7 @@ $(".hamburger").click(function(){
     $(".hamburger").attr("id","notthere")
 })
 
+//Om menyn eller X trycks på så stängs menyn och återställs
 $("#x-btn, .menu-item").click(function(){
     if($(".menu-item").css("display") == "inline")
     {
@@ -82,36 +110,48 @@ $("#x-btn, .menu-item").click(function(){
 })
 
 
-$("#showquestion").click(function(){
-    $("#showquestion").html("Visa e-post")
-})
+
 // Vanilla javascript. 
 
+//När det skrollas, kör scrollFunction
+window.onscroll = () => scrollFunction()
 // Vid scroll och scrollen når 20 pixlar ner, så körs funktionens ifsats.
-
-window.onscroll = function() {scrollFunction()}
-
 function scrollFunction() {
     let header = document.getElementById("right")
     let position = right.getBoundingClientRect()
+    let menuNav = Array.from(document.getElementsByClassName("main-navigation"))
 
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         //Om det är scrollat så sätts upBtn:s display egenskap till block
         document.getElementById("up-btn").style.display = "block"
         
-        if(position.y < 10)
+        if(position.y < 1)
         {
-            right.style.opacity = "1";
+            right.style.opacity = "1"
+            let navAttributes = (menuNav[0].getAttribute("class"))
+            console.log(navAttributes.includes("visibility-hidden"))
+            if(navAttributes.includes("mobile"))
+            {
+               return;
+            }
+            else{
+                menuNav[0].style.backgroundPosition = "right"
+            }
         }
+
     } 
     else {
         //Om det är INTE är scrollat så sätts upBtn:s display egenskap till none och är därmed osynlig.
         document.getElementById("up-btn").style.display = "none"
-        if(position.y >= 10)
+        
+        if(position.y >= 70)
         {
             right.style.opacity = "0";
+            menuNav[0].style.backgroundPosition = "left"
         }
     }
+
+     
 }
 // När användaren klickar på knappen så scrollas sidan upp. Denna funktion är knuten till knappen med en onclick event
 function upp() {
